@@ -20,7 +20,7 @@ export function convertAttributeValue(value, overrideType) {
   if (overrideType && overrideType !== Boolean && typeof propsValue !== overrideType) { // eslint-disable-line valid-typeof
     propsValue = overrideType(value);
   } else if (isBoolean || overrideType === Boolean) {
-    propsValue = propsValue === '' ? true : propsValue === 'true';
+    propsValue = propsValue === '' ? true : (propsValue === 'true' || propsValue === true);
   } else if (isNumber) {
     propsValue = valueParsed;
   }
