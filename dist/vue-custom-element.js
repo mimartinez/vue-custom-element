@@ -1,6 +1,6 @@
 /**
-  * vue-custom-element v3.2.12
-  * (c) 2019 Karol Fabjańczuk
+  * vue-custom-element v3.2.13
+  * (c) 2020 Karol Fabjańczuk
   * @license MIT
   */
 (function (global, factory) {
@@ -172,7 +172,7 @@ function convertAttributeValue(value, overrideType) {
   if (overrideType && overrideType !== Boolean && (typeof propsValue === 'undefined' ? 'undefined' : _typeof(propsValue)) !== overrideType) {
     propsValue = overrideType(value);
   } else if (isBoolean || overrideType === Boolean) {
-    propsValue = propsValue === '' ? true : propsValue === 'true';
+    propsValue = propsValue === '' ? true : propsValue === 'true' || propsValue === true;
   } else if (isNumber) {
     propsValue = valueParsed;
   }
